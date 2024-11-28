@@ -1,0 +1,213 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to bottom right, #ffffff, #d3d3d3);
+    color: #1c1c1c;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image */
+.background {
+    position: fixed; /* Tetap berada di tempat */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') center/cover no-repeat;
+    opacity: 0.3; /* Transparansi 30% */
+    z-index: -1; /* Tetap di belakang elemen lain */
+    filter: blur(5px);
+    will-change: transform; /* Optimisasi animasi */
+}
+
+/* Linktree Section */
+.linktree {
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    z-index: 1; /* Konten tetap di atas background */
+}
+
+/* Profile Section */
+.profile {
+    margin-bottom: 1.5rem;
+    animation: slideDown 1s ease-in-out;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Name and Slogan */
+.linktree h1 {
+    font-size: 2.5rem;
+    color: #1c1c1c;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    animation: slideUp 1s ease-in-out;
+}
+
+.slogan {
+    font-size: 1.4rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Links Styling */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.links .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 5rem;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.links .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.links .btn:hover::before {
+    left: 0;
+}
+
+.links .btn:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+}
+
+.links .btn i {
+    margin-right: 1rem;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .linktree h1 {
+        font-size: 2rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .links .btn {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
